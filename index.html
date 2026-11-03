@@ -19,7 +19,8 @@ body{max-width:1250px}.deck-layout{display:flex;align-items:flex-start;gap:28px;
 .color-picker-line input[type=color]{width:58px;height:42px;padding:3px;cursor:pointer}
 #systems textarea,#encounters textarea{display:block;width:100%;min-height:75px;box-sizing:border-box;margin:8px 0}#systems label,#encounters label{display:block}#systems label>input:not([type=checkbox]),#systems label>select,#encounters .grid input{display:block;max-width:100%;width:100%;margin-top:6px;box-sizing:border-box}#systems .stat p,#encounters .stat p{white-space:pre-wrap}
 /* v13.1: installed components render as contiguous silhouettes, not individual cargo squares. */
-.storage-grid .slot.component.connected-cell{margin:-2px;border-radius:0;box-shadow:none;background:var(--cargo-color,#375c91);min-width:0;z-index:1}
+/* v13.2: bridge the 4px grid gutters for installed components only. */
+.storage-grid .slot.component.connected-cell{margin:-2px;width:calc(100% + 4px);height:calc(100% + 4px);box-sizing:border-box;border-radius:0;box-shadow:none;background:var(--cargo-color,#375c91);min-width:0;z-index:1}
 .storage-grid .slot.component.connected-cell .slot-symbol{opacity:0;font-size:15px;pointer-events:none}
 .storage-grid .slot.component.connected-cell[data-component-anchor="true"] .slot-symbol{opacity:.75}
 .storage-grid .slot.component.connected-cell.hovered{background:color-mix(in srgb,var(--cargo-color,#375c91) 78%,white);outline:none;z-index:2!important}
